@@ -28,12 +28,12 @@ public class _141_环形链表 {
         ListNode fastNode = head.next;
         // 快指针为空和快指针的下一个节点为空都退出循环
         while (fastNode != null && fastNode.next != null) {
-            // 相等即有环
-            if (slowNode == fastNode) return true;
             // 慢指针的步幅为1
             slowNode = slowNode.next;
             // 快指针的步幅为2
             fastNode = fastNode.next.next;
+            // 相等即有环
+            if (slowNode == fastNode) return true;
         }
         return false;
     }

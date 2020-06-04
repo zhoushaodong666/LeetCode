@@ -15,12 +15,18 @@ public class _206_反转链表 {
         }
     }
 
-    // 方法1：递归
+
+    /**
+     * 方法1：递归
+     * 递归到最后一个，然后返回，
+     * 用下一个节点的next指向当前节点，完成反转
+     * 还有将当前节点的next指向置为null，防止循环指向
+     */
     public ListNode reverseList(ListNode head) {
         // 终止条件：节点只有0或者1个的时候退出
         if (head == null || head.next == null) return head;
         ListNode newHead = reverseList(head.next);
-        // head节点的下一个节点的next域指向head，完成最后一次反转
+        // head节点的下一个节点的next域指向head，完成反转
         // 那么head节点这是已经是最后一个节点了，那么head节点的next域还要指向null
         head.next.next = head;
         head.next = null;

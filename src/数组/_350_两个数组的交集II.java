@@ -74,8 +74,4 @@ public class _350_两个数组的交集II {
         }
         return Arrays.copyOf(resultArr,index);
     }
-
-    public static void main(String[] args) {
-
-    }
 }
